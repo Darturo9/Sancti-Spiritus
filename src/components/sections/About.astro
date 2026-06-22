@@ -1,0 +1,141 @@
+<section class="about-section" id="about">
+  <div class="about-container">
+    <div class="about-text">
+      <span class="about-label">Nuestra Historia</span>
+      <h2 class="about-heading">Conoce al Dr. Misael Toboso Navarro</h2>
+      <p class="about-p">Director Medico del Hospital Clinico Quirurgico Sancti Spiritus. Con mas de <strong>20 anos de experiencia</strong> en medicina general y cirugia, lidera un equipo comprometido con brindar atencion medica de calidad a las comunidades de Alta Verapaz.</p>
+      <p class="about-p">Nuestro equipo de especialistas certificados trabaja con tecnologia de vanguardia y un enfoque humanizado. Creemos que cada paciente merece un trato digno, cercano y profesional en cada etapa de su recuperacion.</p>
+    </div>
+
+    <div class="about-video">
+      <div class="about-iframe-placeholder" id="about-iframe-placeholder">
+        <iframe
+          data-src="https://www.instagram.com/reel/DZi1H-ICf9i/embed/"
+          class="about-iframe"
+          frameborder="0"
+          allowfullscreen
+          scrolling="no"
+          title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 5rem 1.5rem;
+    background-color: #ffffff;
+  }
+  .about-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-text {
+    max-width: 640px;
+  }
+  .about-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #004268;
+    background-color: #f0f3ff;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  .about-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #001d32;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+  .about-p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #41474f;
+    margin-bottom: 1rem;
+  }
+  .about-p strong {
+    color: #004268;
+    font-weight: 700;
+  }
+
+  .about-video {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .about-iframe {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 9 / 16;
+    max-height: 560px;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
+    background-color: #e7eeff;
+  }
+  .about-iframe-placeholder {
+    position: relative;
+  }
+  .about-iframe-placeholder::before {
+    content: 'Cargando video...';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: #717880;
+    z-index: 0;
+  }
+
+  @media (min-width: 768px) {
+    .about-container {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+    }
+    .about-video {
+      justify-content: flex-end;
+    }
+    .about-iframe {
+      max-width: 340px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-iframe {
+      max-width: 100%;
+      border-radius: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  const placeholder = document.getElementById('about-iframe-placeholder');
+  if (placeholder) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = placeholder.querySelector('iframe');
+          if (iframe && iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+          }
+          observer.unobserve(placeholder);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    observer.observe(placeholder);
+  }
+</script>

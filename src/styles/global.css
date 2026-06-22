@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-on-surface bg-surface antialiased;
+  }
+}
+
+@layer components {
+  .hero-carousel .slide {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out;
+  }
+  .hero-carousel .slide.active {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

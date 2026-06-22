@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import Services from '../components/sections/Services.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import Booking from '../components/sections/Booking.astro';
+---
+
+<BaseLayout
+  title="Inicio"
+  description="Hospital Clinico Quirurgico Sancti Spiritus — Atencion medica de excelencia con calidez humana en San Cristobal Verapaz, Guatemala. Servicios medicos integrales, especialistas calificados y tecnologia de vanguardia."
+>
+  <Navbar />
+
+  <main>
+    <Hero />
+    <div data-animate><About /></div>
+    <div data-animate><Gallery /></div>
+    <div data-animate><Services /></div>
+    <div data-animate><Reviews /></div>
+    <div data-animate><Booking /></div>
+  </main>
+
+  <Footer />
+
+  <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+</BaseLayout>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 30;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #004268;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 66, 104, 0.25);
+  }
+  .scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .scroll-top:hover {
+    background-color: #005a8c;
+  }
+  .scroll-top:focus-visible {
+    outline: 2px solid #004268;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate], .scroll-top {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('scroll-top') as HTMLButtonElement;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+</script>

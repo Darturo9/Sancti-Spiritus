@@ -1,0 +1,72 @@
+<section class="gallery-section">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img
+        src="/images/gallery-1.jpg"
+        alt="Tecnologia de vanguardia en Hospital Sancti Spiritus"
+        class="gallery-img"
+        loading="lazy"
+      />
+      <div class="gallery-overlay">
+        <span class="gallery-label">Tecnologia de Vanguardia</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img
+        src="/images/gallery-2.jpg"
+        alt="Atencion personalizada en Hospital Sancti Spiritus"
+        class="gallery-img"
+        loading="lazy"
+      />
+      <div class="gallery-overlay">
+        <span class="gallery-label">Atencion Humanizada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery-section {
+    margin: 0;
+    padding: 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+  }
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+  .gallery-label {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

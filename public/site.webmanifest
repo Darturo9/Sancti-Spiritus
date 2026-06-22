@@ -1,0 +1,11 @@
+{
+  "name": "Hospital Sancti Spiritus",
+  "short_name": "Sancti Spiritus",
+  "icons": [
+    { "src": "/android-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#004268",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
