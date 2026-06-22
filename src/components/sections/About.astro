@@ -8,16 +8,15 @@
     </div>
 
     <div class="about-video">
-      <div class="about-iframe-placeholder" id="about-iframe-placeholder">
-        <iframe
-          data-src="https://www.instagram.com/reel/DZi1H-ICf9i/embed/"
-          class="about-iframe"
-          frameborder="0"
-          allowfullscreen
-          scrolling="no"
-          title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
-        ></iframe>
-      </div>
+      <iframe
+        src="https://www.instagram.com/reel/DZi1H-ICf9i/embed/"
+        class="about-iframe"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no"
+        loading="lazy"
+        title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
+      ></iframe>
     </div>
   </div>
 </section>
@@ -82,21 +81,6 @@
     border-radius: 1rem;
     border: none;
     box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
-    background-color: #e7eeff;
-  }
-  .about-iframe-placeholder {
-    position: relative;
-  }
-  .about-iframe-placeholder::before {
-    content: 'Cargando video...';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.875rem;
-    color: #717880;
-    z-index: 0;
   }
 
   @media (min-width: 768px) {
@@ -119,23 +103,3 @@
     }
   }
 </style>
-
-<script>
-  const placeholder = document.getElementById('about-iframe-placeholder');
-  if (placeholder) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const iframe = placeholder.querySelector('iframe');
-          if (iframe && iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
-          }
-          observer.unobserve(placeholder);
-        }
-      });
-    }, { rootMargin: '200px' });
-
-    observer.observe(placeholder);
-  }
-</script>
