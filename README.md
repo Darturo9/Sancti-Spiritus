@@ -38,13 +38,14 @@ sancti-spiritus/
 │   │   ├── EmergencyBar.astro    # Barra roja emergencias 24/7
 │   │   ├── Navbar.astro          # Sticky nav + drawer mobile
 │   │   ├── Footer.astro          # 4-columnas con logo, horarios, contacto, copyright
+│   │   ├── FloatingWhatsApp.astro # Boton flotante WhatsApp con popover de confirmacion
 │   │   └── sections/
 │   │       ├── Hero.astro        # Carrusel 3 slides + texto animado sincronizado
 │   │       ├── About.astro       # Director medico + reel Instagram
 │   │       ├── Gallery.astro     # 2 fotos lado a lado con overlay
 │   │       ├── Services.astro    # 6 servicios visibles + 6 expandibles
 │   │       ├── Reviews.astro     # Carrusel testimonios infinito con clones
-│   │       └── Booking.astro     # Formulario que envia datos por WhatsApp
+│   │       └── Faq.astro         # Acordeon con 5 preguntas frecuentes del docx del bot
 │   ├── layouts/
 │   │   └── BaseLayout.astro      # HTML base + OG tags + favicons
 │   ├── pages/
@@ -68,7 +69,7 @@ sancti-spiritus/
 | 3 | **Gallery** | 2 fotos del hospital lado a lado |
 | 4 | **Servicios** | Grid con 6 servicios principales, boton expandir para ver 6 mas (12 total) |
 | 5 | **Reviews** | Carrusel infinito de testimonios con clones, auto-rotacion cada 5s |
-| 6 | **Booking** | Formulario con validacion nativa, envia datos formateados por WhatsApp al 4303-6016 |
+| 6 | **FAQ** | Acordeon con 5 preguntas frecuentes (parqueo, citas, sin cita, laboratorio, pagos). Datos extraidos del documento del bot de WhatsApp del hospital |
 
 ---
 
@@ -78,7 +79,8 @@ sancti-spiritus/
 - **0 dependencias de UI** (sin React, jQuery, Bootstrap, OwlCarousel)
 - **Open Graph** tags completos para previsualizacion al compartir
 - **Animaciones** fade-in al scroll con IntersectionObserver
-- **Boton "Volver arriba"** aparece al scrollear >600px
+- **Boton "Volver arriba"** aparece al scrollear >600px, posicionado a la izquierda
+- **Boton flotante WhatsApp** con popover de confirmacion antes de abrir el chat
 - **Nav activo** se ilumina segun seccion visible, actualiza URL hash
 - **Responsive** mobile-first con breakpoints en 640, 768, 1024px
 - **Accesibilidad**: alt texts, aria-labels, focus-visible, heading order, contraste, touch targets
@@ -119,7 +121,7 @@ sancti-spiritus/
 
 | Categoria | Score |
 |-----------|-------|
-| Performance | 80+ |
-| Accessibility | 97+ |
-| Best Practices | 95+ |
+| Performance | 97 |
+| Accessibility | 96 |
+| Best Practices | 96 |
 | SEO | 100 |
