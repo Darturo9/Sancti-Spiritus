@@ -40,7 +40,7 @@ sancti-spiritus/
 │   │   ├── Footer.astro          # 4-columnas con logo, horarios, contacto, copyright
 │   │   ├── FloatingWhatsApp.astro # Boton flotante WhatsApp con popover de confirmacion
 │   │   └── sections/
-│   │       ├── Hero.astro        # Carrusel 3 slides + texto animado sincronizado
+│   │       ├── Hero.astro        # Carrusel 3 slides + texto animado + dots responsivos (vertical derecha desktop, bottom-center mobile)
 │   │       ├── About.astro       # Director medico + reel Instagram
 │   │       ├── Gallery.astro     # 2 fotos lado a lado con overlay
 │   │       ├── Services.astro    # 6 servicios visibles + 6 expandibles
@@ -64,7 +64,7 @@ sancti-spiritus/
 
 | # | Seccion | Contenido |
 |---|---------|-----------|
-| 1 | **Hero** | Carrusel fade con 3 fotos reales + animacion de texto sincronizada ("Cuidamos tu salud/familia/futuro") |
+| 1 | **Hero** | Carrusel fade con 3 fotos reales + animacion de texto sincronizada ("Cuidamos tu salud/familia/futuro") + indicadores de slide responsivos (barra vertical derecha en desktop, dots horizontales centrados en mobile con separacion optimizada del CTA) |
 | 2 | **About** | Dr. Misael Toboso Navarro + reel de Instagram con `loading="lazy"` |
 | 3 | **Gallery** | 2 fotos del hospital lado a lado |
 | 4 | **Servicios** | Grid con 6 servicios principales, boton expandir para ver 6 mas (12 total) |
