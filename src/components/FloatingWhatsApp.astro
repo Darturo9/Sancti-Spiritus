@@ -188,7 +188,7 @@
 
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    if (popover?.classList.contains('open') && !popover.contains(target) && target !== trigger) {
+    if (popover?.classList.contains('open') && !popover.contains(target) && !trigger?.contains(target)) {
       closePopover();
     }
   });
