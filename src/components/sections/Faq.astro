@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: '¿Cuánto tardan los resultados de laboratorio?',
-    answer: 'El tiempo de entrega depende de la prueba solicitada. Contáctanos por WhatsApp al <strong>4303-6016</strong> para orientarte según el examen requerido.',
+    answer: 'El tiempo de entrega depende de la prueba solicitada. Contáctanos por WhatsApp al <strong class="nowrap">4303-6016</strong> para orientarte según el examen requerido.',
   },
   {
     question: '¿Qué métodos de pago aceptan?',
@@ -166,6 +166,9 @@ const faqs = [
   .faq-answer :global(strong) {
     color: #001d32;
     font-weight: 600;
+  }
+  .nowrap {
+    white-space: nowrap;
   }
 
   @media (max-width: 600px) {
