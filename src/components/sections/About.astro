@@ -6,7 +6,7 @@
       <p class="about-p">Director Medico del Hospital Clinico Quirurgico Sancti Spiritus. Con mas de <strong>20&nbsp;años de experiencia</strong> en medicina general y cirugia, lidera un equipo comprometido con brindar atencion medica de calidad a las comunidades de Alta Verapaz.</p>
       <p class="about-p">Nuestro equipo de especialistas certificados trabaja con tecnologia de vanguardia y un enfoque humanizado. Creemos que cada paciente merece un trato digno, cercano y profesional en cada etapa de su recuperacion.</p>
       <img
-        src="/images/about-doctor.webp"
+        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251246/about-doctor_zgbd6f.webp"
         alt="Dr. Misael Toboso Navarro"
         class="about-doctor-img"
         loading="lazy"
@@ -16,12 +16,17 @@
     </div>
 
     <div class="about-video">
-      <blockquote
-        class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DZi1H-ICf9i/"
-        data-instgrm-version="14"
-        style="background:#FFF; border:0; border-radius:3px; margin:1px; max-width:540px; min-width:326px; width:100%;">
-      </blockquote>
+      <video
+        class="about-video-el"
+        controls
+        playsinline
+        preload="metadata"
+        poster="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251246/about-doctor_zgbd6f.webp"
+        title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
+      >
+        <source src="https://res.cloudinary.com/dao9ur00t/video/upload/v1782251268/about-reel_zqcvox.webm" type="video/webm">
+        <source src="https://res.cloudinary.com/dao9ur00t/video/upload/v1782251259/about-reel_vyvoh9.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -91,7 +96,7 @@
     align-items: flex-start;
   }
 
-  .instagram-media {
+  .about-video-el {
     max-width: 360px;
     border-radius: 1rem;
     box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
@@ -106,13 +111,13 @@
     .about-video {
       justify-content: flex-end;
     }
-    .instagram-media {
+    .about-video-el {
       max-width: 440px;
     }
   }
 
   @media (max-width: 480px) {
-    .instagram-media {
+    .about-video-el {
       max-width: 100%;
       border-radius: 0.75rem;
     }

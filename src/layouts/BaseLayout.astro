@@ -5,7 +5,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description, image = '/images/logo.webp' } = Astro.props;
+const { title, description, image = 'https://res.cloudinary.com/dao9ur00t/image/upload/v1782251248/logo_byttb2.webp' } = Astro.props;
 const fullTitle = `${title} | Hospital Sancti Spiritus`;
 const fullDescription = description || 'Hospital Clinico Quirurgico Sancti Spiritus — Atencion de excelencia en San Cristobal Verapaz, Guatemala.';
 import '../styles/global.css';
@@ -28,7 +28,7 @@ import '../styles/global.css';
     <meta property="og:locale" content="es_GT" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preload" as="image" href="/images/hero-3.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251247/hero-3_w8oicm.webp" fetchpriority="high" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,6 @@ import '../styles/global.css';
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <script async src="//www.instagram.com/embed.js"></script>
   </head>
   <body>
     <slot />
