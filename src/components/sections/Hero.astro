@@ -3,7 +3,7 @@
     <div class="slide active">
       <img
         src="/images/hero-3.webp"
-        alt="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
+        alt="Dr. Misael Toboso Navarro"
         class="slide-img"
         loading="eager"
       />
@@ -13,7 +13,7 @@
         <source media="(max-width: 767px)" srcset="/images/hero-2-mobile.webp">
         <img
           src="/images/hero-2.webp"
-          alt="Logo del Hospital Sancti Spiritus"
+          alt="Logo institucional"
           class="slide-img"
           loading="lazy"
         />
@@ -22,7 +22,7 @@
     <div class="slide">
       <img
         src="/images/hero-1.webp"
-        alt="Equipo del Hospital Sancti Spiritus"
+        alt="Equipo medico"
         class="slide-img"
         loading="lazy"
       />
@@ -171,16 +171,26 @@
     z-index: 2;
   }
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 2px solid rgba(255,255,255,0.7);
     background: transparent;
     cursor: pointer;
     padding: 0;
+    margin: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
   }
-  .dot.active { background-color: #ffffff; border-color: #ffffff; }
+  .dot::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  .dot.active::after { background-color: #ffffff; }
   .dot:hover { border-color: #ffffff; }
 
   @media (max-width: 767px) {

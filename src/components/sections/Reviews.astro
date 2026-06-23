@@ -240,7 +240,7 @@ const initials = (name: string) => name.split(' ').filter((_, i, a) => i === 0 |
     margin-top: 0.125rem;
   }
   .review-card.active .review-role {
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.75);
   }
   .review-card:not(.active) .review-role {
     color: #717880;
@@ -253,18 +253,29 @@ const initials = (name: string) => name.split(' ').filter((_, i, a) => i === 0 |
     margin-top: 2rem;
   }
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 2px solid #c1c7d0;
     background: transparent;
     cursor: pointer;
     padding: 0;
     transition: border-color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+  }
+  .dot::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
   }
   .dot.active {
-    background-color: #004268;
     border-color: #004268;
+  }
+  .dot.active::after {
+    background-color: #004268;
   }
   .dot:hover {
     border-color: #004268;
