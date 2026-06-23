@@ -16,12 +16,15 @@
     </div>
 
     <div class="about-video">
-      <blockquote
-        class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DZi1H-ICf9i/"
-        data-instgrm-version="14"
-        style="background:#FFF; border:0; border-radius:3px; margin:1px; max-width:540px; min-width:326px; width:100%;">
-      </blockquote>
+      <iframe
+        src="https://www.instagram.com/reel/DZi1H-ICf9i/embed/"
+        class="about-iframe"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no"
+        loading="lazy"
+        title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
+      ></iframe>
     </div>
   </div>
 </section>
@@ -91,6 +94,13 @@
     align-items: flex-start;
   }
 
+  .about-iframe {
+    max-width: 360px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
+    overflow: hidden;
+  }
+
   @media (min-width: 768px) {
     .about-container {
       grid-template-columns: 1.1fr 0.9fr;
@@ -98,6 +108,16 @@
     }
     .about-video {
       justify-content: flex-end;
+    }
+    .about-iframe {
+      max-width: 440px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-iframe {
+      max-width: 100%;
+      border-radius: 0.75rem;
     }
   }
 </style>
