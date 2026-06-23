@@ -15,9 +15,11 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
   title="Inicio"
   description="Hospital Clinico Quirurgico Sancti Spiritus — Atencion medica de excelencia con calidez humana en San Cristobal Verapaz, Guatemala. Servicios medicos integrales, especialistas calificados y tecnologia de vanguardia."
 >
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
   <Navbar />
 
-  <main>
+  <main id="main-content">
     <Hero />
     <div data-animate><About /></div>
     <div data-animate><Gallery /></div>
@@ -37,7 +39,102 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
   </button>
 </BaseLayout>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hospital",
+  "name": "Hospital Clinico Quirurgico Sancti Spiritus",
+  "alternateName": "Sancti Spiritus",
+  "description": "Hospital Clinico Quirurgico con mas de 20 anos de experiencia brindando atencion medica de calidad en San Cristobal Verapaz, Alta Verapaz.",
+  "url": "https://www.hcqss.com",
+  "telephone": "+50279504789",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4ta. Calle 1-91, Zona 3, Barrio San Sebastian",
+    "addressLocality": "San Cristobal Verapaz",
+    "addressRegion": "Alta Verapaz",
+    "addressCountry": "GT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 15.3667,
+    "longitude": -90.4833
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59",
+      "description": "Emergencias 24 horas"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "20:00",
+      "description": "Consulta Externa"
+    }
+  ],
+  "medicalSpecialty": ["General", "Gynecology", "Pediatrics", "Urology", "Otorhinolaryngology", "Surgery", "Obstetrics"],
+  "availableService": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "Emergencias 24/7"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Laboratorio Clinico"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Cirugia"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Maternidad"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Hospitalizacion"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Consulta Externa"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Rayos X"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Ultrasonidos"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61590210207134",
+    "https://instagram.com/hospital_sancti_spiritus_gt"
+  ]
+}
+</script>
+
 <style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 999;
+    padding: 0.75rem 1.25rem;
+    background: #004268;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
   [data-animate] {
     opacity: 0;
     transform: translateY(24px);

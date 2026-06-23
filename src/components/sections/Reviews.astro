@@ -49,14 +49,14 @@ const initials = (name: string) => name.split(' ').filter((_, i, a) => i === 0 |
             <p class="review-text">{t.quote}</p>
             <div class="review-author">
               <div class="review-avatar">{initials(t.name)}</div>
-              <figcaption>
+              <div>
                 <strong class="review-name">{t.name}</strong>
                 <span class="review-role">{t.role}</span>
-              </figcaption>
+              </div>
             </div>
           </div>
         ))}
-
+ 
         <!-- Original cards -->
         {testimonials.map((t, i) => (
           <div class={`review-card ${i === 0 ? 'active' : ''}`} data-index={i}>
@@ -70,14 +70,14 @@ const initials = (name: string) => name.split(' ').filter((_, i, a) => i === 0 |
             <p class="review-text">{t.quote}</p>
             <div class="review-author">
               <div class="review-avatar">{initials(t.name)}</div>
-              <figcaption>
+              <div>
                 <strong class="review-name">{t.name}</strong>
                 <span class="review-role">{t.role}</span>
-              </figcaption>
+              </div>
             </div>
           </div>
         ))}
-
+ 
         <!-- Clones at end: first 2 cards for right-side neighbors -->
         {testimonials.slice(0, 2).map((t, i) => (
           <div class="review-card clone">
@@ -91,10 +91,10 @@ const initials = (name: string) => name.split(' ').filter((_, i, a) => i === 0 |
             <p class="review-text">{t.quote}</p>
             <div class="review-author">
               <div class="review-avatar">{initials(t.name)}</div>
-              <figcaption>
+              <div>
                 <strong class="review-name">{t.name}</strong>
                 <span class="review-role">{t.role}</span>
-              </figcaption>
+              </div>
             </div>
           </div>
         ))}

@@ -5,18 +5,23 @@
       <h2 class="about-heading">Conoce al Dr. Misael Toboso Navarro</h2>
       <p class="about-p">Director Medico del Hospital Clinico Quirurgico Sancti Spiritus. Con mas de <strong>20&nbsp;años de experiencia</strong> en medicina general y cirugia, lidera un equipo comprometido con brindar atencion medica de calidad a las comunidades de Alta Verapaz.</p>
       <p class="about-p">Nuestro equipo de especialistas certificados trabaja con tecnologia de vanguardia y un enfoque humanizado. Creemos que cada paciente merece un trato digno, cercano y profesional en cada etapa de su recuperacion.</p>
+      <img
+        src="/images/about-doctor.webp"
+        alt="Dr. Misael Toboso Navarro"
+        class="about-doctor-img"
+        loading="lazy"
+        width="800"
+        height="533"
+      />
     </div>
 
     <div class="about-video">
-      <iframe
-        src="https://www.instagram.com/reel/DZi1H-ICf9i/embed/"
-        class="about-iframe"
-        frameborder="0"
-        allowfullscreen
-        scrolling="no"
-        loading="lazy"
-        title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
-      ></iframe>
+      <blockquote
+        class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DZi1H-ICf9i/"
+        data-instgrm-version="14"
+        style="background:#FFF; border:0; border-radius:3px; margin:1px; max-width:540px; min-width:326px; width:100%;">
+      </blockquote>
     </div>
   </div>
 </section>
@@ -32,7 +37,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
   }
   .about-text {
     max-width: 640px;
@@ -68,19 +73,22 @@
     font-weight: 700;
   }
 
+  .about-doctor-img {
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .about-doctor-img {
+      display: none;
+    }
+  }
+
   .about-video {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-  }
-  .about-iframe {
-    width: 100%;
-    max-width: 360px;
-    aspect-ratio: 9 / 16;
-    max-height: 560px;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
   }
 
   @media (min-width: 768px) {
@@ -90,16 +98,6 @@
     }
     .about-video {
       justify-content: flex-end;
-    }
-    .about-iframe {
-      max-width: 340px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .about-iframe {
-      max-width: 100%;
-      border-radius: 0.75rem;
     }
   }
 </style>
