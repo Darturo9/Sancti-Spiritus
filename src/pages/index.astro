@@ -7,7 +7,8 @@ import About from '../components/sections/About.astro';
 import Gallery from '../components/sections/Gallery.astro';
 import Services from '../components/sections/Services.astro';
 import Reviews from '../components/sections/Reviews.astro';
-import Booking from '../components/sections/Booking.astro';
+import Faq from '../components/sections/Faq.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 ---
 
 <BaseLayout
@@ -22,10 +23,12 @@ import Booking from '../components/sections/Booking.astro';
     <div data-animate><Gallery /></div>
     <div data-animate><Services /></div>
     <div data-animate><Reviews /></div>
-    <div data-animate><Booking /></div>
+    <div data-animate><Faq /></div>
   </main>
 
   <Footer />
+
+  <FloatingWhatsApp />
 
   <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

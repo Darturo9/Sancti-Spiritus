@@ -1,0 +1,208 @@
+---
+const faqs = [
+  {
+    question: '¿Tienen parqueo?',
+    answer: 'No contamos con parqueo propio. Sí contamos con acceso para personas con discapacidad y adultos mayores.',
+  },
+  {
+    question: '¿Qué servicios necesitan cita previa?',
+    answer: 'Urología y otorrinolaringología requieren cita previa. Para consulta externa con medicina general, ginecología y pediatría, puedes consultar disponibilidad.',
+  },
+  {
+    question: '¿Puedo llegar sin cita?',
+    answer: 'Sí. Puedes consultar disponibilidad para consulta externa con médicos de planta como medicina general, ginecología y pediatría. Si es una emergencia, acude directamente o llama al <strong>7950-4789</strong>.',
+  },
+  {
+    question: '¿Cuánto tardan los resultados de laboratorio?',
+    answer: 'El tiempo de entrega depende de la prueba solicitada. Contáctanos por WhatsApp al <strong>4303-6016</strong> para orientarte según el examen requerido.',
+  },
+  {
+    question: '¿Qué métodos de pago aceptan?',
+    answer: 'Aceptamos efectivo, tarjeta, transferencia y depósito. Para temas de aseguradoras, un asesor te brindará información personalizada por WhatsApp.',
+  },
+];
+---
+
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <h2 class="faq-heading">Preguntas Frecuentes</h2>
+    <p class="faq-subtitle">Respuestas rápidas a las dudas más comunes de nuestros pacientes</p>
+
+    <div class="faq-list">
+      {faqs.map((faq, i) => (
+        <div class="faq-item">
+          <button
+            class="faq-question"
+            id={`faq-btn-${i}`}
+            aria-expanded={i === 0 ? 'true' : 'false'}
+            aria-controls={`faq-answer-${i}`}
+            type="button"
+          >
+            <span class="faq-icon">
+              <svg class="faq-icon-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </span>
+            <span class="faq-q-text">{faq.question}</span>
+          </button>
+          <div
+            class="faq-answer-wrapper"
+            id={`faq-answer-${i}`}
+            role="region"
+            aria-labelledby={`faq-btn-${i}`}
+            class:list={['faq-answer-wrapper', { open: i === 0 }]}
+          >
+            <div class="faq-answer" set:html={faq.answer} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 5rem 1.5rem;
+    background-color: #f9f9ff;
+  }
+  .faq-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .faq-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #001d32;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .faq-subtitle {
+    text-align: center;
+    font-size: 1.0625rem;
+    color: #717880;
+    margin-bottom: 3rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background-color: #ffffff;
+    border-radius: 0.875rem;
+    box-shadow: 0 2px 12px rgba(0, 66, 104, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+  .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 66, 104, 0.08);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #001d32;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-height: 44px;
+  }
+  .faq-question:hover {
+    background-color: #f0f3ff;
+  }
+  .faq-question:focus-visible {
+    outline: 2px solid #004268;
+    outline-offset: -2px;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-icon-svg {
+    color: #004268;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .faq-question[aria-expanded="true"] .faq-icon-svg {
+    transform: rotate(45deg);
+  }
+
+  .faq-q-text {
+    flex: 1;
+    line-height: 1.5;
+  }
+
+  .faq-answer-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .faq-answer-wrapper.open {
+    max-height: 300px;
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: #41474f;
+  }
+  .faq-answer :global(strong) {
+    color: #001d32;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .faq-question {
+      padding: 1rem 1.25rem;
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1rem 1.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-answer-wrapper,
+    .faq-icon-svg {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const faqButtons = document.querySelectorAll('.faq-question');
+
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      faqButtons.forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+        const panel = document.getElementById(btn.getAttribute('aria-controls') || '');
+        panel?.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        button.setAttribute('aria-expanded', 'true');
+        const panel = document.getElementById(button.getAttribute('aria-controls') || '');
+        panel?.classList.add('open');
+      }
+    });
+  });
+</script>
