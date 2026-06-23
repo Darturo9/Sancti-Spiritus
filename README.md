@@ -80,7 +80,7 @@ sancti-spiritus/
 - **Open Graph** tags completos para previsualizacion al compartir
 - **Animaciones** fade-in al scroll con IntersectionObserver
 - **Boton "Volver arriba"** aparece al scrollear >600px, posicionado a la izquierda
-- **Boton flotante WhatsApp** con popover de confirmacion antes de abrir el chat
+- **Boton flotante WhatsApp** con popover de confirmacion antes de abrir el chat. Clic en cualquier parte del boton (bordes o centro/SVG) funciona correctamente.
 - **Nav activo** se ilumina segun seccion visible, actualiza URL hash
 - **Responsive** mobile-first con breakpoints en 640, 768, 1024px
 - **Accesibilidad**: alt texts, aria-labels, focus-visible, heading order, contraste, touch targets
