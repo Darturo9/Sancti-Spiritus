@@ -72,8 +72,19 @@ const moreServices = [
     <p class="services-subtitle">Atencion medica integral para toda la familia, disponible las 24 horas</p>
 
     <div class="services-grid">
-      {mainServices.map(service => (
+      {mainServices.slice(0, 4).map(service => (
         <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d={service.icon} />
+            </svg>
+          </div>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-desc">{service.description}</p>
+        </div>
+      ))}
+      {mainServices.slice(4).map(service => (
+        <div class="service-card desktop-only">
           <div class="service-icon-wrapper">
             <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d={service.icon} />
@@ -87,6 +98,17 @@ const moreServices = [
 
     <div class="services-more" id="services-more">
       <div class="services-grid">
+        {mainServices.slice(4).map(service => (
+          <div class="service-card service-card--secondary mobile-only">
+            <div class="service-icon-wrapper service-icon-wrapper--small">
+              <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d={service.icon} />
+              </svg>
+            </div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-desc">{service.description}</p>
+          </div>
+        ))}
         {moreServices.map(service => (
           <div class="service-card service-card--secondary">
             <div class="service-icon-wrapper service-icon-wrapper--small">
@@ -103,7 +125,7 @@ const moreServices = [
 
     <div class="services-toggle">
       <button class="toggle-btn" id="services-toggle-btn" aria-expanded="false">
-        <span class="toggle-text">Ver todos los servicios (12)</span>
+        <span class="toggle-text">Ver más servicios</span>
         <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 9l6 6 6-6"/>
         </svg>
@@ -245,10 +267,18 @@ const moreServices = [
     transform: rotate(180deg);
   }
 
+  .desktop-only { display: none; }
+  .mobile-only { display: none; }
+
   @media (min-width: 640px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .desktop-only { display: flex; }
+  }
+
+  @media (max-width: 639px) {
+    .mobile-only { display: flex; }
   }
 
   @media (min-width: 1024px) {
@@ -267,6 +297,6 @@ const moreServices = [
     const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
     toggleBtn.setAttribute('aria-expanded', String(!isOpen));
     morePanel.classList.toggle('open');
-    toggleText.textContent = isOpen ? 'Ver todos los servicios (12)' : 'Mostrar menos';
+    toggleText.textContent = isOpen ? 'Ver más servicios' : 'Mostrar menos';
   });
 </script>
