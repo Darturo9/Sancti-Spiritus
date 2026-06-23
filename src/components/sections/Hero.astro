@@ -61,7 +61,7 @@
     height: 100vh;
     min-height: 650px;
     max-height: 900px;
-    overflow: hidden;
+    overflow: clip;
     background-color: #000b36;
   }
   .hero-carousel {
@@ -177,7 +177,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    z-index: 2;
+    z-index: 10;
   }
   .dot {
     width: 24px;
@@ -187,6 +187,7 @@
     background: transparent;
     cursor: pointer;
     padding: 0;
+    touch-action: manipulation;
     margin: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     position: relative;
@@ -215,11 +216,12 @@
     .hero-title { font-size: 1.75rem; }
     .hero-subtitle { font-size: 1rem; }
     .hero-dots {
-      top: auto;
-      bottom: 2rem;
+      top: 8rem;
+      bottom: auto;
       right: auto;
       left: 50%;
-      transform: translateX(-50%);
+      margin-left: -48px;
+      transform: none;
       flex-direction: row;
     }
   }
