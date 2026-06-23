@@ -1,0 +1,20 @@
+# Cache de 1 año para imágenes
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache de 1 mes para assets compilados (CSS/JS)
+/_astro/*
+  Cache-Control: public, max-age=2592000
+
+# Cache de 1 semana para favicons y manifest
+/favicon*
+  Cache-Control: public, max-age=604800
+
+/apple-touch*
+  Cache-Control: public, max-age=604800
+
+/android-*
+  Cache-Control: public, max-age=604800
+
+/site.webmanifest
+  Cache-Control: public, max-age=604800
