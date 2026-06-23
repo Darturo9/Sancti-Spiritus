@@ -28,11 +28,7 @@ sancti-spiritus/
 ├── public/
 │   ├── _headers                  # Cache + seguridad
 │   ├── site.webmanifest          # PWA manifest
-│   ├── favicon.ico / .png        # Favicons (6 formatos)
-│   └── images/
-│       ├── logo.png / logo-nav.png
-│       ├── hero-*.webp           # 3 slides + 1 mobile
-│       └── gallery-*.webp        # 2 fotos
+│   └── favicon.ico / .png        # Favicons (6 formatos)
 ├── src/
 │   ├── components/
 │   │   ├── EmergencyBar.astro    # Barra roja emergencias 24/7
@@ -75,7 +71,7 @@ sancti-spiritus/
 
 ## Caracteristicas
 
-- **100% fotos propias** del hospital, convertidas de RAW a WebP optimizado
+- **100% fotos propias** del hospital, convertidas de RAW a WebP optimizado y servidas via Cloudinary CDN
 - **0 dependencias de UI** (sin React, jQuery, Bootstrap, OwlCarousel)
 - **Open Graph** tags completos para previsualizacion al compartir
 - **Animaciones** fade-in al scroll con IntersectionObserver
