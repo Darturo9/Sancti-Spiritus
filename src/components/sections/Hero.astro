@@ -6,6 +6,8 @@
         alt="Dr. Misael Toboso Navarro"
         class="slide-img"
         loading="eager"
+        width="1920"
+        height="900"
       />
     </div>
     <div class="slide">
@@ -69,6 +71,7 @@
     inset: 0;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    will-change: opacity;
   }
   .slide.active {
     opacity: 1;
@@ -114,6 +117,7 @@
     opacity: 0;
     transform: translateY(0.5em);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
   }
   .animated-word.active {
     opacity: 1;
