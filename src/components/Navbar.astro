@@ -2,12 +2,12 @@
 import EmergencyBar from './EmergencyBar.astro';
 
 const navLinks = [
-  { href: '#hero', label: 'Inicio' },
-  { href: '#about', label: 'Nosotros' },
-  { href: '#services', label: 'Servicios' },
-  { href: '#reviews', label: 'Testimonios' },
-  { href: '#booking', label: 'Citas' },
-  { href: '#contact', label: 'Contacto' },
+  { href: '#hero', label: 'Inicio', section: 'hero' },
+  { href: '#about', label: 'Nosotros', section: 'about' },
+  { href: '#services', label: 'Servicios', section: 'services' },
+  { href: '#reviews', label: 'Testimonios', section: 'reviews' },
+  { href: '#booking', label: 'Citas', section: 'booking' },
+  { href: '#contact', label: 'Contacto', section: 'contact' },
 ];
 ---
 
@@ -25,7 +25,7 @@ const navLinks = [
 
     <nav class="navbar-nav" aria-label="Navegacion principal">
       {navLinks.map(link => (
-        <a href={link.href} class="nav-link">{link.label}</a>
+        <a href={link.href} class="nav-link" data-section={link.section}>{link.label}</a>
       ))}
     </nav>
 
@@ -59,9 +59,9 @@ const navLinks = [
     </button>
   </div>
   <ul class="drawer-nav" role="list">
-    {navLinks.map(link => (
+      {navLinks.map(link => (
       <li>
-        <a href={link.href} class="drawer-link">{link.label}</a>
+        <a href={link.href} class="drawer-link" data-section={link.section}>{link.label}</a>
       </li>
     ))}
   </ul>
@@ -145,6 +145,10 @@ const navLinks = [
   .nav-link:focus-visible {
     outline: 2px solid #004268;
     outline-offset: 2px;
+  }
+  .nav-link.active {
+    color: #004268;
+    background-color: #f0f3ff;
   }
   .navbar-hamburger {
     display: flex;
@@ -329,4 +333,29 @@ const navLinks = [
   window.addEventListener('scroll', () => {
     navbar?.classList.toggle('scrolled', window.scrollY > 8);
   }, { passive: true });
+
+  const allNavLinks = document.querySelectorAll('.nav-link[data-section]');
+  const allDrawerLinks = document.querySelectorAll('.drawer-link[data-section]');
+
+  function setActiveSection(sectionId: string) {
+    const id = sectionId.replace('#', '');
+    allNavLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === id));
+    allDrawerLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === id));
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    let activeSection = '';
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeSection = entry.target.id;
+      }
+    });
+    if (activeSection) {
+      setActiveSection(activeSection);
+      history.replaceState(null, '', `#${activeSection}`);
+    }
+  }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
+  sections.forEach(s => sectionObserver.observe(s));
 </script>
