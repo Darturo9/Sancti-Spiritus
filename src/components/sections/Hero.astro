@@ -2,13 +2,24 @@
   <div class="hero-carousel">
     <div class="slide active">
       <img
-        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251247/hero-3_w8oicm.webp"
-        alt="Dr. Misael Toboso Navarro"
+        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251247/hero-1_l6n8x6.webp"
+        alt="Equipo medico"
         class="slide-img"
         loading="eager"
-        width="1920"
-        height="900"
+        width="1200"
+        height="800"
       />
+    </div>
+    <div class="slide">
+      <picture>
+        <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dao9ur00t/image/upload/v1782751990/copy_of_slide-hero-nuevo_i7rxyc.webp">
+        <img
+          src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782751817/hero-new_suai68.webp"
+          alt="Hospital Sancti Spiritus"
+          class="slide-img"
+          loading="lazy"
+        />
+      </picture>
     </div>
     <div class="slide">
       <picture>
@@ -20,16 +31,6 @@
           loading="lazy"
         />
       </picture>
-    </div>
-    <div class="slide">
-      <img
-        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251247/hero-1_l6n8x6.webp"
-        alt="Equipo medico"
-        class="slide-img"
-        loading="lazy"
-        width="1200"
-        height="800"
-      />
     </div>
   </div>
 
@@ -44,7 +45,7 @@
     </h1>
     <p class="hero-subtitle">Atencion medica de excelencia con calidez humana en San Cristobal Verapaz. Mas de 20&nbsp;años al servicio de la comunidad.</p>
     <div class="hero-actions">
-      <a href="#nosotros" class="hero-btn">Conocenos</a>
+      <a href="#services" class="hero-btn">Conocenos</a>
     </div>
   </div>
 
@@ -86,7 +87,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,66,104,0.88) 0%, rgba(0,66,104,0.55) 50%, rgba(0,66,104,0.2) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,9 +210,10 @@
       min-height: 550px;
     }
     .hero-overlay {
-      background: linear-gradient(to top, rgba(0,66,104,0.92), rgba(0,66,104,0.4));
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 40%);
       justify-content: flex-end;
-      padding-bottom: 7rem;
+      padding-top: 0;
+      padding-bottom: 2rem;
     }
     .hero-title { font-size: 1.75rem; }
     .hero-subtitle { font-size: 1rem; }

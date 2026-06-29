@@ -1,32 +1,86 @@
 <section class="about-section" id="nosotros">
   <div class="about-container">
     <div class="about-text">
-      <span class="about-label">Nuestra Historia</span>
-      <h2 class="about-heading">Conoce al Dr. Misael Toboso Navarro</h2>
-      <p class="about-p">Director Medico del Hospital Clinico Quirurgico Sancti Spiritus. Con mas de <strong>20&nbsp;años de experiencia</strong> en medicina general y cirugia, lidera un equipo comprometido con brindar atencion medica de calidad a las comunidades de Alta Verapaz.</p>
-      <p class="about-p">Nuestro equipo de especialistas certificados trabaja con tecnologia de vanguardia y un enfoque humanizado. Creemos que cada paciente merece un trato digno, cercano y profesional en cada etapa de su recuperacion.</p>
+      <span class="about-label">Sobre Nosotros</span>
+      <h2 class="about-heading">Hospital Clinico Quirurgico Sancti Spiritus</h2>
+      <p class="about-p">Somos una institucion medica comprometida con la salud de las familias de <strong>San Cristobal Verapaz</strong> y las comunidades cercanas. Brindamos atencion integral las 24 horas, los 365 dias del año, combinando tecnologia moderna con un trato humano y profesional.</p>
+      <p class="about-p">Nuestro equipo de especialistas trabaja con vocacion de servicio, ofreciendo desde emergencias y consulta externa hasta hospitalizacion, cirugia y maternidad, siempre con la calidad y calidez que nuestra comunidad merece.</p>
+
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <span class="highlight-number">24/7</span>
+            <span class="highlight-label">Abierto todo el año</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <span class="highlight-number">+20</span>
+            <span class="highlight-label">Años de experiencia</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div>
+            <span class="highlight-number">12+</span>
+            <span class="highlight-label">Servicios medicos</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <div>
+            <span class="highlight-number">5</span>
+            <span class="highlight-label">Especialidades</span>
+          </div>
+        </div>
+      </div>
+
       <img
-        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251246/about-doctor_zgbd6f.webp"
-        alt="Dr. Misael Toboso Navarro"
-        class="about-doctor-img"
+        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782251248/hero-2_zjpijh.webp"
+        alt="Sancti Spiritus"
+        class="about-logo"
+        loading="lazy"
+        width="400"
+        height="200"
+      />
+
+    </div>
+
+    <div class="about-visual">
+      <img
+        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782750755/hospital-about-1_mo0wmy.webp"
+        alt="Hospital Sancti Spiritus"
+        class="about-img"
         loading="lazy"
         width="800"
         height="533"
       />
-    </div>
-
-    <div class="about-video">
-      <video
-        class="about-video-el"
-        controls
-        playsinline
-        preload="metadata"
-        poster="https://res.cloudinary.com/dao9ur00t/video/upload/so_0/about-reel_vyvoh9.jpg"
-        title="Dr. Misael Toboso Navarro - Hospital Sancti Spiritus"
-      >
-        <source src="https://res.cloudinary.com/dao9ur00t/video/upload/v1782251268/about-reel_zqcvox.webm" type="video/webm">
-        <source src="https://res.cloudinary.com/dao9ur00t/video/upload/v1782251259/about-reel_vyvoh9.mp4" type="video/mp4">
-      </video>
+      <img
+        src="https://res.cloudinary.com/dao9ur00t/image/upload/v1782750819/copy_of_hospital-about-2_evggfo.webp"
+        alt="Hospital Sancti Spiritus"
+        class="about-img"
+        loading="lazy"
+        width="800"
+        height="533"
+      />
     </div>
   </div>
 </section>
@@ -41,7 +95,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
   .about-text {
     max-width: 640px;
@@ -77,37 +131,70 @@
     font-weight: 700;
   }
 
-  .about-doctor-img {
+  .about-img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 1rem;
     box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
+  }
+
+  .about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-logo {
+    width: 100%;
+    border-radius: 1rem;
+    opacity: 0.85;
     margin-top: 1.5rem;
   }
 
-  @media (max-width: 767px) {
-    .about-doctor-img {
-      display: none;
-    }
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
   }
 
-  .about-video {
+  .highlight-item {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    gap: 0.75rem;
+    background-color: #f0f3ff;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    transition: background-color 0.2s ease;
   }
 
-  .about-video-el {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #000;
-    max-width: 360px;
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px rgba(0, 66, 104, 0.10);
-    overflow: hidden;
-    border: 3px solid #004268;
-    outline: 1px solid #e5e7eb;
-    outline-offset: 6px;
+  .highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #004268;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .highlight-number {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #001d32;
+    line-height: 1.2;
+  }
+  .highlight-label {
+    display: block;
+    font-size: 0.8125rem;
+    color: #41474f;
   }
 
   @media (min-width: 768px) {
@@ -115,18 +202,20 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 2.5rem;
     }
-    .about-video {
-      justify-content: center;
+    .about-img {
+      border-radius: 1rem;
     }
-    .about-video-el {
-      max-width: 440px;
+  }
+
+  @media (max-width: 767px) {
+    .about-img {
+      border-radius: 1rem;
     }
   }
 
   @media (max-width: 480px) {
-    .about-video-el {
-      max-width: 100%;
-      border-radius: 0.75rem;
+    .about-highlights {
+      grid-template-columns: 1fr;
     }
   }
 </style>

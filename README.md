@@ -36,9 +36,9 @@ sancti-spiritus/
 │   │   ├── Footer.astro          # 4-columnas con logo, horarios, contacto, copyright
 │   │   ├── FloatingWhatsApp.astro # Boton flotante WhatsApp con popover de confirmacion
 │   │   └── sections/
-│   │       ├── Hero.astro        # Carrusel 3 slides + texto animado + dots responsivos (vertical derecha desktop, bottom-center mobile)
-│   │       ├── About.astro       # Director medico + reel Instagram
-│   │       ├── Gallery.astro     # 2 fotos lado a lado con overlay
+│   │       ├── Hero.astro        # Carrusel 3 slides (equipo medico, hospital, logo) + texto animado + dots responsivos
+│   │       ├── About.astro       # Sobre Nosotros: texto institucional, 4 highlights, logo, 2 fotos del hospital
+│   │       ├── Gallery.astro     # 4 fotos lado a lado con overlay
 │   │       ├── Services.astro    # 6 servicios visibles + 6 expandibles
 │   │       ├── Reviews.astro     # Carrusel testimonios infinito con clones
 │   │       └── Faq.astro         # Acordeon con 5 preguntas frecuentes del docx del bot
@@ -60,9 +60,9 @@ sancti-spiritus/
 
 | # | Seccion | Contenido |
 |---|---------|-----------|
-| 1 | **Hero** | Carrusel fade con 3 fotos reales + animacion de texto sincronizada ("Cuidamos tu salud/familia/futuro") + indicadores de slide responsivos (barra vertical derecha en desktop, dots horizontales centrados en mobile con separacion optimizada del CTA) |
-| 2 | **About** | Dr. Misael Toboso Navarro + reel de Instagram con `loading="lazy"` |
-| 3 | **Gallery** | 2 fotos del hospital lado a lado |
+| 1 | **Hero** | Carrusel fade con 3 fotos reales (equipo medico, hospital, logo institucional) + texto animado ("Cuidamos tu salud/familia/futuro"). CTA apunta a Servicios. Sin gradiente azul en overlay. |
+| 2 | **About** | Texto institucional del hospital + 4 highlights (24/7, +20 años, 12+ servicios, 5 especialidades) + logo + 2 fotos apiladas a la derecha |
+| 3 | **Gallery** | 4 fotos del hospital lado a lado con overlay (Tecnologia, Atencion Humanizada, Profesionalismo, Atencion al detalle) |
 | 4 | **Servicios** | Grid con 6 servicios principales, boton expandir para ver 6 mas (12 total) |
 | 5 | **Reviews** | Carrusel infinito de testimonios con clones, auto-rotacion cada 5s |
 | 6 | **FAQ** | Acordeon con 5 preguntas frecuentes (parqueo, citas, sin cita, laboratorio, pagos). Datos extraidos del documento del bot de WhatsApp del hospital |
@@ -81,7 +81,7 @@ sancti-spiritus/
 - **Responsive** mobile-first con breakpoints en 640, 768, 1024px
 - **Accesibilidad**: alt texts, aria-labels, focus-visible, heading order, contraste, touch targets
 - **Seguridad**: headers HSTS, XFO, COOP, nosniff, referrer-policy, permissions-policy
-- **Cache**: 1 ano para imagenes, 1 mes para CSS/JS, 1 semana para favicons
+- **Cache**: 1 año para imagenes, 1 mes para CSS/JS, 1 semana para favicons
 - **`prefers-reduced-motion`** respetado en animaciones
 
 ---
