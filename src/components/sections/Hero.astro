@@ -35,7 +35,7 @@
   </div>
 
   <div class="hero-overlay">
-    <h1 class="hero-title">
+    <h1 class="hero-title hero-entrance" style="--delay: 0s">
       Cuidamos tu
       <span class="animated-text">
         <span class="animated-word active">salud</span>
@@ -43,8 +43,8 @@
         <span class="animated-word">futuro</span>
       </span>
     </h1>
-    <p class="hero-subtitle">Atención médica de excelencia con calidez humana en San Cristobal Verapaz. Mas de 20&nbsp;años al servicio de la comunidad.</p>
-    <div class="hero-actions">
+    <p class="hero-subtitle hero-entrance" style="--delay: 0.15s">Atención médica de excelencia con calidez humana en San Cristobal Verapaz. Mas de 20&nbsp;años al servicio de la comunidad.</p>
+    <div class="hero-actions hero-entrance" style="--delay: 0.3s">
       <a href="https://www.hcqss.com/#nosotros" class="hero-btn">Conocenos</a>
       <a
         href="https://wa.me/50243036016?text=Me%20gustar%C3%ADa%20realizar%20una%20cita"
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div class="hero-dots" id="hero-dots">
+  <div class="hero-dots hero-entrance" id="hero-dots" style="--delay: 0.45s">
     <button class="dot active" data-index="0" aria-label="Slide 1"></button>
     <button class="dot" data-index="1" aria-label="Slide 2"></button>
     <button class="dot" data-index="2" aria-label="Slide 3"></button>
@@ -261,6 +261,28 @@
       flex-direction: row;
     }
   }
+
+  .hero-entrance {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .hero-entrance.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-entrance {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .hero-carousel .slide {
+      transform: none !important;
+    }
+  }
 </style>
 
 <script>
@@ -294,4 +316,25 @@
   });
 
   interval = setInterval(nextSlide, 5000);
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.hero-entrance').forEach(el => el.classList.add('visible'));
+  });
+
+  const hero = document.querySelector('.hero-section') as HTMLElement;
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const isMobile = window.matchMedia('(max-width: 767px)');
+
+  if (!mediaQuery.matches && !isMobile.matches) {
+    window.addEventListener('scroll', () => {
+      const rect = hero.getBoundingClientRect();
+      if (rect.bottom > 0) {
+        const progress = Math.max(-1, Math.min(1, -rect.top / rect.height));
+        const activeSlide = slides[currentSlide] as HTMLElement;
+        if (activeSlide) {
+          activeSlide.style.transform = `translateY(${progress * 50}px)`;
+        }
+      }
+    }, { passive: true });
+  }
 </script>

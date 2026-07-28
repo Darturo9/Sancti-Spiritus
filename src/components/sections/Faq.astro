@@ -25,12 +25,12 @@ const faqs = [
 
 <section class="faq-section" id="faq">
   <div class="faq-container">
-    <h2 class="faq-heading">Preguntas Frecuentes</h2>
-    <p class="faq-subtitle">Respuestas rápidas a las dudas más comunes de nuestros pacientes</p>
+    <h2 class="faq-heading" data-animate-child style="--delay: 0s">Preguntas Frecuentes</h2>
+    <p class="faq-subtitle" data-animate-child style="--delay: 0.08s">Respuestas rápidas a las dudas más comunes de nuestros pacientes</p>
 
     <div class="faq-list">
       {faqs.map((faq, i) => (
-        <div class="faq-item">
+        <div class="faq-item" data-animate-child style={`--delay: ${0.12 + i * 0.06}s`}>
           <button
             class="faq-question"
             id={`faq-btn-${i}`}
